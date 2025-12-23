@@ -1,4 +1,0 @@
-# input: {INPUT_DESCRIPTION}
-# output: {OUTPUT_DESCRIPTION}
-# pos: {POSITION_DESCRIPTION}
-# When updated, remember to update header comments and folder README.md
