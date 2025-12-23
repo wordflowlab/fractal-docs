@@ -1,6 +1,10 @@
 # Fractal Docs
 
 <p align="center">
+  <img src="images/banner.jpeg" alt="Fractal Docs" width="600">
+</p>
+
+<p align="center">
   <strong>🌀 让 AI 编程助手自动理解你的项目结构</strong><br>
   <strong>🌀 Let AI coding assistants automatically understand your project structure</strong>
 </p>
