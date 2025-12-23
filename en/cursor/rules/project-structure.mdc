@@ -1,0 +1,25 @@
+---
+description: Project structure navigation for AI coding assistant
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# Project Structure Navigation
+
+## Core Directories
+
+### Example: Frontend
+- `src/components/` - React components
+- `src/pages/` - Page components
+- `src/hooks/` - Custom React hooks
+
+### Example: Backend
+- `src/services/` - Business logic services
+- `src/models/` - Data models
+- `src/controllers/` - API controllers
+
+## Usage Guide
+
+1. **Find files**: Look up by function description in directory index
+2. **Understand responsibilities**: Each file's header comments explain its role
+3. **Create new files**: Follow naming conventions of existing files
