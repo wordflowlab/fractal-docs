@@ -110,11 +110,30 @@ Fractal Docs 是一套面向 AI 编程助手的**自维护文档系统**。它�
 
 ## Quick Start | 快速开始
 
-### Option 1: Use Install Script | 使用安装脚本
+### Option 1: Use Kiro Spec (Recommended) | 使用 Kiro Spec（推荐）
+
+This is the most powerful way - let AI automatically generate configurations tailored to your project!
+
+这是最强大的方式 - 让 AI 自动生成适配你项目的配置！
 
 ```bash
 # Clone the template
-git clone https://github.com/user/fractal-docs.git
+git clone https://github.com/wordflowlab/fractal-docs.git
+
+# Copy the spec to your project
+cp -r fractal-docs/.kiro/specs/fractal-docs your-project/.kiro/specs/
+
+# Open your project in Kiro, then:
+# 1. Open the spec (tasks.md)
+# 2. Let AI execute the tasks
+# 3. AI will analyze your project and generate tailored configurations
+```
+
+### Option 2: Use Install Script | 使用安装脚本
+
+```bash
+# Clone the template
+git clone https://github.com/wordflowlab/fractal-docs.git
 cd fractal-docs
 
 # Install Chinese version for all editors
@@ -126,7 +145,7 @@ cd fractal-docs
 ./install.sh /path/to/your/project claude zh
 ```
 
-### Option 2: Manual Installation | 手动安装
+### Option 3: Manual Installation | 手动安装
 
 ```bash
 # For Kiro (Chinese)
@@ -180,47 +199,44 @@ Brief description (3 lines max)
 
 ```
 fractal-docs/
-├── zh/                          # 中文版本
-│   ├── steering/                # Kiro 配置
+├── .kiro/
+│   └── specs/
+│       └── fractal-docs/            # Kiro Spec（推荐方式）
+│           ├── requirements.md      # 需求文档
+│           ├── design.md            # 设计文档
+│           └── tasks.md             # 任务列表（AI 执行这个）
+├── zh/                              # 中文版本（静态模板）
+│   ├── steering/                    # Kiro 配置
 │   │   ├── doc-maintenance.md
 │   │   └── project-structure.md
-│   ├── templates/               # 文件模板
+│   ├── templates/                   # 文件模板
 │   │   ├── folder-readme.md
 │   │   ├── file-header-ts.txt
 │   │   ├── file-header-go.txt
 │   │   ├── file-header-rs.txt
 │   │   └── file-header-py.txt
-│   ├── cursor/rules/            # Cursor 配置
-│   │   ├── doc-maintenance.mdc
-│   │   └── project-structure.mdc
-│   ├── claude/                  # Claude Code 配置
-│   │   ├── CLAUDE.md
-│   │   └── .claude/rules/
-│   │       ├── doc-maintenance.md
-│   │       └── project-structure.md
-│   ├── windsurf/                # Windsurf 配置
-│   │   └── .windsurfrules
-│   ├── copilot/.github/         # GitHub Copilot 配置
-│   │   └── copilot-instructions.md
-│   ├── cline/                   # Cline 配置
-│   │   └── .clinerules
-│   └── AGENTS.md                # 通用配置
-├── en/                          # English version
-│   ├── steering/                # Kiro config
-│   ├── templates/               # File templates
-│   ├── cursor/rules/            # Cursor config
-│   ├── claude/                  # Claude Code config
-│   ├── windsurf/                # Windsurf config
-│   ├── copilot/.github/         # GitHub Copilot config
-│   ├── cline/                   # Cline config
-│   └── AGENTS.md                # Universal config
-├── examples/                    # Example implementations
-│   ├── typescript-react/
-│   ├── go-backend/
-│   └── rust-tauri/
-├── install.sh                   # Installation script
+│   ├── cursor/rules/                # Cursor 配置
+│   ├── claude/                      # Claude Code 配置
+│   ├── windsurf/                    # Windsurf 配置
+│   ├── copilot/.github/             # GitHub Copilot 配置
+│   ├── cline/                       # Cline 配置
+│   └── AGENTS.md                    # 通用配置
+├── en/                              # English version（同上）
+├── install.sh                       # 安装脚本
 └── README.md
 ```
+
+### 两种使用方式
+
+**方式 1: Kiro Spec（推荐）**
+- 复制 `.kiro/specs/fractal-docs/` 到你的项目
+- 让 AI 执行 tasks.md，自动分析项目并生成适配的配置
+- 优点：AI 会根据你的项目结构自动定制
+
+**方式 2: 静态模板**
+- 使用 `install.sh` 或手动复制 `zh/` 或 `en/` 目录
+- 手动编辑 `project-structure.md` 添加你的目录引用
+- 优点：简单快速，适合了解自己项目结构的用户
 
 ---
 
